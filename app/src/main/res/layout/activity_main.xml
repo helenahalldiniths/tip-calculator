@@ -35,7 +35,7 @@
         android:id="@+id/tvTipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -111,4 +111,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/sbTip"
+        app:layout_constraintStart_toStartOf="@+id/sbTip"
+        app:layout_constraintTop_toBottomOf="@+id/sbTip"
+        tools:text="Acceptable" />
 </androidx.constraintlayout.widget.ConstraintLayout>
