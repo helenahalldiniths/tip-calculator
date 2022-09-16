@@ -30,23 +30,34 @@ class MainActivity : AppCompatActivity() {
         sbTip.progress = INITIAL_TIP_PERCENT;
         tvTipPercentLabel.text = "$INITIAL_TIP_PERCENT%"
 
-        sbTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+        sbTip.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
                 tvTipPercentLabel.text = "$p1%"
+                computeTipAndTotal()
             }
+
             override fun onStartTrackingTouch(p0: SeekBar?) {}
             override fun onStopTrackingTouch(p0: SeekBar?) {}
         })
 
-        etBaseAmount.addTextChangedListener(object : TextWatcher{
+        etBaseAmount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {
                 Log.i(TAG, "afterTextChanged $p0")
-
+                computeTipAndTotal()
             }
 
         })
+    }
+
+    private fun computeTipAndTotal() {
+        val baseAmount = etBaseAmount.text.toString().toDouble();
+        val tipPercent = sbTip.progress
+        val tip = baseAmount * tipPercent / 100
+        val total = baseAmount + tip
+        tvTipAmount.text = tip.toString()
+        tvTotalAmount.text = total.toString()
     }
 }
