@@ -23,7 +23,7 @@
         android:layout_marginTop="32dp"
         android:text="24%"
         app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel"
-        tools:layout_editor_absoluteX="19dp" />
+        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel" />
 
     <TextView
         android:id="@+id/tvTipLabel"
@@ -32,7 +32,7 @@
         android:layout_marginTop="32dp"
         android:text="Tip"
         app:layout_constraintTop_toBottomOf="@+id/tvTipPercent"
-        tools:layout_editor_absoluteX="22dp" />
+        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel" />
 
     <TextView
         android:id="@+id/tvTotalLabel"
@@ -41,5 +41,5 @@
         android:layout_marginTop="32dp"
         android:text="Total"
         app:layout_constraintTop_toBottomOf="@+id/tvTipLabel"
-        tools:layout_editor_absoluteX="19dp" />
+        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>
