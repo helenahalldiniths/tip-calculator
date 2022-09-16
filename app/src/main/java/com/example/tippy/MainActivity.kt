@@ -2,12 +2,14 @@ package com.example.tippy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
 
-private const val TAG = "MainActivity";
+private const val TAG = "MyMainActivity";
 private const val INITIAL_TIP_PERCENT = 10;
 class MainActivity : AppCompatActivity() {
     private lateinit var etBaseAmount: EditText
@@ -33,10 +35,17 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "onProgressChanged $p1")
                 tvTipPercentLabel.text = "$p1%"
             }
-
             override fun onStartTrackingTouch(p0: SeekBar?) {}
-
             override fun onStopTrackingTouch(p0: SeekBar?) {}
+        })
+
+        etBaseAmount.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                Log.i(TAG, "afterTextChanged $p0")
+
+            }
 
         })
     }
