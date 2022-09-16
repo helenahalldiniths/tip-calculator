@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         val tipPercent = sbTip.progress
         val tip = baseAmount * tipPercent / 100
         val total = baseAmount + tip
-        tvTipAmount.text = tip.toString()
-        tvTotalAmount.text = total.toString()
+        tvTipAmount.text = "%.2f".format(tip)
+        tvTotalAmount.text = "%.2f".format(total)
     }
 }
