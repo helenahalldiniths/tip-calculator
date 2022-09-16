@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun computeTipAndTotal() {
+        if(etBaseAmount.text.isEmpty()) {
+            tvTipAmount.text = ""
+            tvTotalAmount.text = ""
+            return
+        }
         val baseAmount = etBaseAmount.text.toString().toDouble();
         val tipPercent = sbTip.progress
         val tip = baseAmount * tipPercent / 100
